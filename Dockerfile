@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copia il jar buildato nella cartella di lavoro
 ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
+COPY target/Cibo-0.0.1-SNAPSHOT.jar app.jar
 
 # Espone la porta (Render usa $PORT)
 EXPOSE 8080
