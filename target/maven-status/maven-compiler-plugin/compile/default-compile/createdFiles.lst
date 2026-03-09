@@ -1,0 +1,13 @@
+com\example\Cibo\product\GetProductService.class
+com\example\Cibo\product\PostProductService.class
+com\example\Cibo\App.class
+com\example\Cibo\model\Ingrediente.class
+com\example\Cibo\model\IngredienteDTO.class
+com\example\Cibo\model\Ricetta.class
+com\example\Cibo\product\GetRicettaByPortataService.class
+com\example\Cibo\product\Command.class
+com\example\Cibo\model\RicettaRepository.class
+com\example\Cibo\product\Query.class
+com\example\Cibo\model\RicettaDTO.class
+com\example\Cibo\product\GetProductsService.class
+com\example\Cibo\product\RicettaController.class
