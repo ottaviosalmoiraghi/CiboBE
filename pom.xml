@@ -14,7 +14,7 @@
   <artifactId>Cibo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>Cibo</name>
+  <name>CiboBE</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -110,6 +110,10 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
+        <plugin>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-maven-plugin</artifactId>
+		</plugin>
       </plugins>
     </pluginManagement>
   </build>
