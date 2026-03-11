@@ -110,22 +110,13 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
         </plugin>
-        <plugin>
+      </plugins>
+    </pluginManagement>
+   	<plugins>
+       	<plugin>
 		  <groupId>org.springframework.boot</groupId>
 		  <artifactId>spring-boot-maven-plugin</artifactId>
 		</plugin>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>repackage</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
+	</plugins>
   </build>
 </project>
