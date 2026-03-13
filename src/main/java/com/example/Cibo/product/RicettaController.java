@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -65,6 +66,11 @@ public class RicettaController {
 		
 		return postProductService.execute(ricetta);
 		
+	}
+	
+	@GetMapping("/ready")
+	public ResponseEntity<String> getReady() {
+		return ResponseEntity.status(HttpStatus.OK).body("Tutto ok");
 	}
 
 }
