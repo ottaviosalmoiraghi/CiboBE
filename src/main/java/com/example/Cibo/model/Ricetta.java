@@ -35,6 +35,28 @@ public class Ricetta {
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
 	@JoinColumn(name="ID_RICETTA")
 	private List<Ingrediente> ingredienti;
+	
+	public String getPasto() {
+		return pasto;
+	}
+
+	public void setPasto(String pasto) {
+		this.pasto = pasto;
+	}
+
+	public String getGiorno() {
+		return giorno;
+	}
+
+	public void setGiorno(String giorno) {
+		this.giorno = giorno;
+	}
+
+	@Column(name = "PASTO")
+	private String pasto;
+	
+	@Column(name = "GIORNO")
+	private String giorno;
 
 	public String getPortata() {
 		return portata;

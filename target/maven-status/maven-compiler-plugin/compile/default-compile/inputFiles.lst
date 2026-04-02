@@ -5,9 +5,11 @@ C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\model\Ricetta.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\model\RicettaDTO.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\model\RicettaRepository.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\Command.java
+C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\DeleteMealPrepService.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\GetProductService.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\GetProductsService.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\GetRicettaByPortataService.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\PostProductService.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\Query.java
 C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\RicettaController.java
+C:\dev\Maven\CiboBE\src\main\java\com\example\Cibo\product\UpdateMealPrepService.java
