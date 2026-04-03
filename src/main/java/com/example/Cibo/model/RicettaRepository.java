@@ -22,5 +22,8 @@ public interface RicettaRepository extends JpaRepository<Ricetta,Integer>{
 	@Transactional
 	@Query("UPDATE Ricetta P SET P.giorno = :estraiGiorno, P.pasto = :estraiPasto WHERE P.progRicetta = :estraiProgRicetta")
 	void updatePrepMealById(@Param("estraiGiorno") String estraiGiorno, @Param("estraiPasto") String estraiPasto, @Param("estraiProgRicetta") int estraiProgRicetta);
+	
+	@Query("SELECT P FROM Ricetta P WHERE P.giorno IS NOT NULL AND P.pasto IS NOT NULL")
+	List<Ricetta> findRicetteByWeek();
 
 }

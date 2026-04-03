@@ -9,7 +9,7 @@ import com.example.Cibo.model.RicettaRepository;
 @Service
 public class DeleteMealPrepService implements Query<Void,String>{
 	
-	private RicettaRepository ricettaRepository;
+	private final RicettaRepository ricettaRepository;
 	
 	public DeleteMealPrepService(RicettaRepository ricettaRepository) {
 		this.ricettaRepository = ricettaRepository;

@@ -34,16 +34,19 @@ public class RicettaController {
 	
 	private final UpdateMealPrepService updateMealPrepService;
 	
+	private final GetWeekService getWeekService;
+	
 
 
 	public RicettaController(GetProductsService getProductsService, PostProductService postProductService,
-			GetProductService getProductService, GetRicettaByPortataService getRicettaByPortataService, DeleteMealPrepService deleteMealPrepService, UpdateMealPrepService updateMealPrepService) {
+			GetProductService getProductService, GetRicettaByPortataService getRicettaByPortataService, DeleteMealPrepService deleteMealPrepService, UpdateMealPrepService updateMealPrepService, GetWeekService getWeekService) {
 		this.getProductsService = getProductsService;
 		this.postProductService = postProductService;
 		this.getProductService = getProductService;
 		this.getRicettaByPortataService = getRicettaByPortataService;
 		this.deleteMealPrepService = deleteMealPrepService;
 		this.updateMealPrepService = updateMealPrepService;
+		this.getWeekService = getWeekService;
 	}
 
 	@GetMapping("/read")
@@ -87,6 +90,11 @@ public class RicettaController {
 	@PostMapping("/updateMealPrep")
 	public ResponseEntity<String> updateMealPrep(@RequestBody List<Ricetta> ricette){
 		return updateMealPrepService.execute(ricette);
+	}
+	
+	@GetMapping("/readWeek")
+	public ResponseEntity<List<RicettaDTO>> getWeek(){
+		return getWeekService.execute(null);
 	}
 
 }

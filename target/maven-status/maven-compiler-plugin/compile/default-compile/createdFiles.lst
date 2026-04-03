@@ -12,4 +12,5 @@ com\example\Cibo\product\DeleteMealPrepService.class
 com\example\Cibo\product\Query.class
 com\example\Cibo\model\RicettaDTO.class
 com\example\Cibo\product\GetProductsService.class
+com\example\Cibo\product\GetWeekService.class
 com\example\Cibo\product\RicettaController.class
