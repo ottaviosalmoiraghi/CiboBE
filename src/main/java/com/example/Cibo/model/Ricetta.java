@@ -36,27 +36,9 @@ public class Ricetta {
 	@JoinColumn(name="ID_RICETTA")
 	private List<Ingrediente> ingredienti;
 	
-	public String getPasto() {
-		return pasto;
-	}
-
-	public void setPasto(String pasto) {
-		this.pasto = pasto;
-	}
-
-	public String getGiorno() {
-		return giorno;
-	}
-
-	public void setGiorno(String giorno) {
-		this.giorno = giorno;
-	}
-
-	@Column(name = "PASTO")
-	private String pasto;
-	
-	@Column(name = "GIORNO")
-	private String giorno;
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name="prog_ricetta")
+	private List<Mealprep> mealpreps;
 
 	public String getPortata() {
 		return portata;
@@ -96,6 +78,14 @@ public class Ricetta {
 
 	public void setNumIngredienti(int numIngredienti) {
 		this.numIngredienti = numIngredienti;
+	}
+
+	public List<Mealprep> getMealprep() {
+		return mealpreps;
+	}
+
+	public void setMealprep(List<Mealprep> mealpreps) {
+		this.mealpreps = mealpreps;
 	}
 
 	public Ricetta() {

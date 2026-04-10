@@ -7,10 +7,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.Cibo.model.Ricetta;
+import com.example.Cibo.model.RicettaDTO;
 import com.example.Cibo.model.RicettaRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
-public class UpdateMealPrepService implements Query<List<Ricetta>, String> {
+public class UpdateMealPrepService implements Query<List<Ricetta>, List<RicettaDTO>> {
 
 	private RicettaRepository ricettaRepository;
 
@@ -19,12 +22,27 @@ public class UpdateMealPrepService implements Query<List<Ricetta>, String> {
 	}
 
 	@Override
-	public ResponseEntity<String> execute(List<Ricetta> ricette) {
+	@Transactional
+	public ResponseEntity<List<RicettaDTO>> execute(List<Ricetta> ricette) {
 
-		ricette.forEach(ricetta -> ricettaRepository.updatePrepMealById(ricetta.getGiorno(),
-				ricetta.getPasto(), ricetta.getProgRicetta()));
-		return ResponseEntity.status(HttpStatus.OK).body("Meal Prep Aggiornato!");
+		List<RicettaDTO> ricetteDTO = ricette.stream().map(RicettaDTO::new).toList();
+		ricette.forEach(this::aggiornaMealprep);
+		return ResponseEntity.status(HttpStatus.OK).body(ricetteDTO);
 
+	}
+	
+	private void aggiornaMealprep(Ricetta ricetta) {
+		
+		Ricetta db = ricettaRepository.findById(ricetta.getProgRicetta()).orElse(null);
+		
+		if(db == null) {
+			ricettaRepository.save(ricetta);
+			return;
+		}
+		
+//		db.getMealprep().clear();
+		db.getMealprep().addAll(ricetta.getMealprep());
+		
 	}
 
 }

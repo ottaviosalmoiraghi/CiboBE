@@ -83,12 +83,12 @@ public class RicettaController {
 	}
 	
 	@PostMapping("/deleteMealPrep")
-	public ResponseEntity<String> deleteMealPrep(){
+	public ResponseEntity<List<RicettaDTO>> deleteMealPrep(){
 		return deleteMealPrepService.execute(null);
 	}
 	
 	@PostMapping("/updateMealPrep")
-	public ResponseEntity<String> updateMealPrep(@RequestBody List<Ricetta> ricette){
+	public ResponseEntity<List<RicettaDTO>> updateMealPrep(@RequestBody List<Ricetta> ricette){
 		return updateMealPrepService.execute(ricette);
 	}
 	

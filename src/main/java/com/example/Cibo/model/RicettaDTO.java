@@ -6,79 +6,50 @@ import lombok.Data;
 
 @Data
 public class RicettaDTO {
-	
+
 	private int progRicetta;
 	private String nome;
 	private int numeroIngredienti;
 	private String portata;
-	private String giorno;
-	private String pasto;
 	private List<IngredienteDTO> ingredienti;
-	
+	private List<MealprepDTO> mealprep;
+
 	public RicettaDTO(Ricetta ricetta) {
-		
-		this.progRicetta=ricetta.getProgRicetta();
-		this.nome=ricetta.getNomeRicetta();
-		this.numeroIngredienti=ricetta.getNumIngredienti();
-		this.portata=ricetta.getPortata();
-		this.pasto=ricetta.getPasto();
-		this.giorno=ricetta.getGiorno();
-		this.ingredienti=ricetta.getIngredienti()
-								.stream()
-								.map(IngredienteDTO::new)
-								.toList();
-		
+
+		this.progRicetta = ricetta.getProgRicetta();
+		this.nome = ricetta.getNomeRicetta();
+		this.numeroIngredienti = ricetta.getNumIngredienti();
+		this.portata = ricetta.getPortata();
+		this.ingredienti = ricetta.getIngredienti() == null ? List.of()
+				: ricetta.getIngredienti().stream().map(IngredienteDTO::new).toList();
+		this.mealprep = ricetta.getMealprep() == null ? List.of()
+				: ricetta.getMealprep().stream().map(MealprepDTO::new).toList();
+
 	}
-
-
 
 	public int getProgRicetta() {
 		return progRicetta;
 	}
 
-
-
 	public void setProgRicetta(int progRicetta) {
 		this.progRicetta = progRicetta;
 	}
-
-
-
-	public String getGiorno() {
-		return giorno;
-	}
-
-
-
-	public void setGiorno(String giorno) {
-		this.giorno = giorno;
-	}
-
-
-
-	public String getPasto() {
-		return pasto;
-	}
-
-
-
-	public void setPasto(String pasto) {
-		this.pasto = pasto;
-	}
-
-
 
 	public List<IngredienteDTO> getIngredienti() {
 		return ingredienti;
 	}
 
-
-
 	public void setIngredienti(List<IngredienteDTO> ingredienti) {
 		this.ingredienti = ingredienti;
 	}
 
+	public List<MealprepDTO> getMealprep() {
+		return mealprep;
+	}
 
+	public void setMealprep(List<MealprepDTO> mealprep) {
+		this.mealprep = mealprep;
+	}
 
 	public String getNome() {
 		return nome;

@@ -7,8 +7,10 @@ com\example\Cibo\model\Ricetta.class
 com\example\Cibo\product\UpdateMealPrepService.class
 com\example\Cibo\product\GetRicettaByPortataService.class
 com\example\Cibo\product\Command.class
+com\example\Cibo\model\Mealprep.class
 com\example\Cibo\model\RicettaRepository.class
 com\example\Cibo\product\DeleteMealPrepService.class
+com\example\Cibo\model\MealprepDTO.class
 com\example\Cibo\product\Query.class
 com\example\Cibo\model\RicettaDTO.class
 com\example\Cibo\product\GetProductsService.class
