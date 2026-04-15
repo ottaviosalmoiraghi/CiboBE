@@ -21,6 +21,7 @@ public class PostProductService implements Command<Ricetta,RicettaDTO>{
 	public ResponseEntity<RicettaDTO> execute(Ricetta ricetta) {
 		
 		ricetta.setNomeRicetta(ricetta.getNomeRicetta().toUpperCase().trim());
+		ricetta.getIngredienti().forEach(i -> i.setIngrediente(i.getIngrediente().toUpperCase().trim()));
 		Ricetta savedRicetta = ricettaRepository.save(ricetta);
 		return ResponseEntity.status(HttpStatus.CREATED).body(new RicettaDTO(savedRicetta));
 		
